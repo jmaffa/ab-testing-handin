@@ -68,7 +68,7 @@
     padding: 10px;
   }
   .section p{
-    margin: 20px;
+    margin: 10px;
   }
   .section-divider{
     width: 100%;
@@ -165,7 +165,7 @@
     border:#5D2BFF 2px solid;
     margin: 10px;
   }
-  #research ol{
+  /* #research ol{
     text-align: left;
   }
   #research li{
@@ -180,7 +180,7 @@
   #hi-fi li{
     text-align: left;
     list-style-type: none;
-  }
+  } */
   #comparison {
     display: flex;
     flex-direction: row;
@@ -213,6 +213,7 @@
   .body-text{
     text-align: left;
     align-self: flex-start;
+    margin: -10px;
     /* margin-left: 100px; */
     padding-left: 50px;
   }

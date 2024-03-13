@@ -32,7 +32,7 @@
                 </div>
                 <div class="arrow-down"></div>
                 <div class="project-step">
-                    <p>Conclude</p>
+                    <p>Conclusion</p>
                 </div>
             </div>
         </div>
@@ -62,6 +62,7 @@
         <hr class="section-divider" class="section">
         <!-- Hypothesize -->
         <div id="data-analysis" class="section">
+            <!-- OVERVIEW OF TESTING PROCESS -->
             <h1 class="section-header">Hypothesize, Test, Analyze</h1>
             <p>To test the difference in the interfaces, I chose the following metrics: </p>
             <ul class="bullet-list">
@@ -69,37 +70,164 @@
                 <li>How long did it take the user to complete the task (in seconds)?</li>
                 <li>How far did the user move their mouse during the task (in pixels)?</li>
             </ul>
-            <p>For each metric, I create a null and alternative hypothesis with reasoning. I then run a statistical test, describe relevant data and make a conclusion on my hypotheses based on the data</p>
+            <p>For each metric, I create a null and alternative hypothesis with reasoning. I then run a statistical test, describe relevant data and make a conclusion on my hypotheses based on the data. Note, all values are rounded to 2 significant decimal points.</p>
             <p>For both interfaces, the experiment was run 34 times for interface A and 31 times for interface B.</p>
+            <!-- MISCLICK -->
             <hr class="list-divider">
             <h1>Misclick</h1>
             <h3>Null hypothesis</h3>
-            <p class="body-text">Lorem ipsum</p>
+            <p class="body-text">Users will mislick regardless of if they are booking a medical appointment with interface A or B.</p>
+            <p class="body-text"><i>I predict I will reject the null hypothesis because the buttons are clearer in this interface.</i></p>
             <h3>Alternative hypothesis</h3>
-            <p class="body-text">Lorem ipsum</p>
+            <p class="body-text"> Users will misclick fewer times when booking a medical appointment with interface B as compared to interface A.</p>
+            <p class="body-text"><b>Intuition: </b><i>I added hover effects—including a color and cursor change—to the buttons, so people may have an easier time knowing what to click, subsequently finding the correct button with fewer incorrect clicks.</i></p>
             <h3>Test</h3>
-            <p class="body-text">Lorem ipsum</p>
+            <p class="body-text">I chose a Chi-Squared test because the data is boolean and thus categorical.</p>
             <h3>Results</h3>
             <table>
-
+                <tr>
+                    <th>Statistic</th>
+                    <th>Value</th>
+                </tr>
+                <tr>
+                    <td>Degrees of Freedom</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>chi-squared</td>
+                    <td>4.10</td>
+                </tr>
+                <tr>
+                    <td>p-value</td>
+                    <td>0.043</td>
+                </tr>
             </table>
+            <p class="body-text">There are only two possible results: either the user misclicked or did not, thus explaining the 1 degree of freedom. The chi-square value corresponds to the magnitude of difference between both results, but it is mostly meaningless without the p value.</p>
             <h3>Conclusion</h3>
-            <p class="body-text">Lorem ipsum</p>
-            
+            <p class="body-text">
+                Based on the found p-value of 0.043 which is less than 0.05, I can conclude that the difference between interface A and B with respect to likelihood to misclick is statistically significant.
+                Because the difference between interface A and B is statistically significant, we can reject the null hypothesis and conclude that there is significant evidence for the alternative hypothesis that interface B will cause users to misclick less often when doing the task as compared to interface A.
+            </p>
+            <!-- TIME SPENT ON PAGE -->
             <hr class="list-divider">
             <h1>Time Spent on Page</h1>
+            <h3>Null hypothesis</h3>
+            <p class="body-text">Users will spend the same amount of time to book a medical appointment with interfaces A and B.</p>
+            <p class="body-text"><i>I predict I will reject the null hypothesis because it is easier to distinguish between appointments and find the correct one in interface B than it is in A.</i></p>
+            <h3>Alternative hypothesis</h3>
+            <p class="body-text">Users will spend less time booking a medical appointment with interface B as compared to interface A.</p>
+            <p class="body-text"><b>Intuition: </b><i>The clearer button styling will reduce the time spent from starting the task to finishing it because there will be less cognitive load trying to figure out what to press. Additionally, the delineation between the appointments makes the correct appointment more apparent.</i></p>
+            <h3>Test</h3>
+            <p class="body-text">I chose a One-Tailed-T-test because the data is numerical and continuous. My alternative hypothesis indicates that interface B will reduce the time spent on the task, so one-tailed makes more sense than a two-tailed test that would just suggest a difference.</p>
+            <h3>Results</h3>
+            <table>
+                <tr>
+                    <th>Statistic</th>
+                    <th>Value</th>
+                </tr>
+                <tr>
+                    <td>Avg(A) (seconds)</td>
+                    <td>12.86</td>
+                </tr>
+                <tr>
+                    <td>Variance(A) (seconds)</td>
+                    <td>11.86</td>
+                </tr>
+                <tr>
+                    <td>Avg(B) (seconds)</td>
+                    <td>7.45</td>
+                </tr>
+                <tr>
+                    <td>Variance(B) (seconds)</td>
+                    <td>2.00</td>
+                </tr>
+                <tr>
+                    <td>Degrees of Freedom</td>
+                    <td>35.06</td>
+                </tr>
+                <tr>
+                    <td>T-score</td>
+                    <td>2.62</td>
+                </tr>
+                <tr>
+                    <td>p-value (A < B) </td>
+                    <td>0.9935</td>
+                </tr>
+                <tr>
+                    <td>p-value (B < A) </td>
+                    <td>0.0065</td>
+                </tr>
+            </table>
+            <p class="body-text">I calculated my p-value (B < A) based on my hypothesis that interface B is expected to reduce the time spent on the page as 1 - p-value(A < B). We also notice a higher average time spent on page and higher variance for interface A.</p>
+            <h3>Conclusion</h3>
+            <p class="body-text">
+                Based on the found p-value of 0.0065 which is less than 0.05, I can conclude that the difference between interface A and B with respect to time on page is statistically significant. 
+                Because the difference between interface A and B is statistically significant, we can reject the null hypothesis and conclude that there is significant evidence for the alternative hypothesis that interface B reduces the time a user will spend to do the task.            
+            </p>
             <hr class="list-divider">
             <h1>Mouse distance moved</h1>
+            <h3>Null hypothesis</h3>
+            <p class="body-text">Users will move their mouse the same distance to book a medical appointment with interfaces A and B.</p>
+            <p class="body-text"><i>I predict I will reject the null hypothesis because users will spend less time moving their mouse and searching for the correct button with interface B than they do in interface A.</i></p>
+            <h3>Alternative hypothesis</h3>
+            <p class="body-text">Users will move their mouse less distance to book a medical appointment with interface B as compared to interface A.</p>
+            <p class="body-text"><b>Intuition: </b><i>The segmentation of the updated interface will allow people to scan the interface without using their mouse to explore, making them move their mouse less distance from the start to the end of the task.</i></p>
+            <h3>Test</h3>
+            <p class="body-text">I chose a One-Tailed-T-test because the data is numerical and continuous. My alternative hypothesis indicates that interface B will reduce the distance the mouse travels, so one-tailed makes more sense than a two-tailed test that would just suggest a difference.</p>
+            <h3>Results</h3>
+            <table>
+                <tr>
+                    <th>Statistic</th>
+                    <th>Value</th>
+                </tr>
+                <tr>
+                    <td>Avg(A) (pixels)</td>
+                    <td>4006.56</td>
+                </tr>
+                <tr>
+                    <td>Variance(A) (pixels)</td>
+                    <td>2530.19</td>
+                </tr>
+                <tr>
+                    <td>Avg(B) (pixels)</td>
+                    <td>2808.03</td>
+                </tr>
+                <tr>
+                    <td>Variance(B) (pixels)</td>
+                    <td>480.81</td>
+                </tr>
+                <tr>
+                    <td>Degrees of Freedom</td>
+                    <td>35.60</td>
+                </tr>
+                <tr>
+                    <td>T-score</td>
+                    <td>2.71</td>
+                </tr>
+                <tr>
+                    <td>p-value (A < B) </td>
+                    <td>0.9948</td>
+                </tr>
+                <tr>
+                    <td>p-value (B < A) </td>
+                    <td>0.0052</td>
+                </tr>
+            </table>
+            <p class="body-text">I calculated my p-value (B < A) based on my hypothesis that interface B is expected to reduce the distance the mouse moves as 1 - p-value(A < B). We also notice a higher average mouse distance moved and higher variance for interface A.</p>
+            <h3>Conclusion</h3>
+            <p class="body-text">
+                Based on the found p-value of 0.0052 which is less than 0.05, I can conclude that the difference between interface A and B with respect to distance the mouse moved in pixels on the page is statistically significant.
+                Because the difference between interface A and B is statistically significant, we can reject the null hypothesis and conclude that there is significant evidence for the alternative hypothesis that interface B reduces the distance a user will move their mouse during the task.            </p>
             
         </div>
         <hr class="section-divider" class="section">
         <!-- Conclude -->
-        <div id="conclude" class="section">
-            <h1 class="section-header">Conclude</h1>
-            <p> 
-                Overall, I found that in the three metrics, the data provides reasonable evidence to conclude that my updates to interface improved the ease 
+        <div id="conclusion" class="section">
+            <h1 class="section-header">Conclusion</h1>
+            <p><b> 
+                Overall, I found that in the three metrics, the data provides reasonable evidence to reject all null hypotheses and conclude that my updates to interface improved the ease 
                 with which a user could complete the task. 
-            </p>
+            </b></p>
             <p>
                 However, it is also important to note that, although my data may paint a clear picture, I would likely have 
                 to conduct the experiment with many more participants to make a more definitive conclusion. Specifically, I had 34 and 31 data points for interface 
@@ -108,8 +236,8 @@
                 Consider time on page as an example where I found an an average of roughly 13 seconds spent on the task for interface A, but it has a standard deviation of roughly 11 
                 seconds, indicating a relatively noisy sample.  However, for interface B, the average time is roughly 7 seconds with a 2 second variance. Likewise, the mouse traveled distance shows 
                 a large standard deviation for interface A and a comparatively low standard deviation for interface B (~2500 vs. ~500 pixels respectively). 
-            </p>
-            <p>Thus, I can see that, even though the data is relatively noisy, the consistency that is found over the tests of interface B as compared to interface A suggests a more ubiquitous interface that is able to be successfully used more frequently on average.</p>
+                Thus, I can see that, even though the data is relatively noisy, the consistency that is found over the tests of interface B as compared to interface A suggests a more ubiquitous interface that is able to be successfully used more frequently on average.</p>
+
         </div>
     </body>
 </html>
