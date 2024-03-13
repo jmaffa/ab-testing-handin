@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans&family=Caveat:wght@400..700&family=League+Spartan:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">        <title>RR Handin</title>
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <!-- HEADER -->
+        <div id="header">
+            <h1>A/B Testing</h1>
+            <h2>Joe Maffa</h2>
+        </div>
+        <hr class="section-divider">
+        <!-- Intro to project -->
+        <div id="background" class="section">
+            <h1 class="section-header">Background</h1>
+            <p>
+                In order to learn the method of A/B testing, I was tasked with updating an interface to schedule a medical appointment. Users are presented with the task of 
+                "Schedule an appointment with Adam Ng, MD at Morristown Medical Center on April 23, 2024." Using A/B testing, I wanted to see if I could improve the interface to increase
+                the efficiency and success rate of completing the task. To do so, I implemented a redesigned interface and conducted user tests for both interfaces, measuring metrics such as misclick rate, time spent on page, and mouse distance traveled for the task.
+                Using this data, I ran statistical tests to determine that there is sufficient evidence that my interface adjustments actually did make a statistically significant improvement to the user flow.
+            </p>
+            <div id="overview">
+                 <!-- OVERVIEW OF PROJECT -->
+                <div class="project-step">
+                    <p>Redesign</p>
+                </div>
+                <div class="arrow-down"></div>
+                <div class="project-step">
+                    <p>Hypothesize, Test, Analyze</p>
+                </div>
+                <div class="arrow-down"></div>
+                <div class="project-step">
+                    <p>Conclude</p>
+                </div>
+            </div>
+        </div>
+        <hr class="section-divider">
+        <!-- Redesign -->
+        <div id="redesign" class="section">
+            <h1 class="section-header">Redesign</h1>
+            <p>I started by redesigning the original interface. Specifically, I made three key updates:</p>
+            
+            <ul class="bullet-list">
+                <li>Increase contrast between button color and text color</li>
+                <li>Add a hover property, cursor update, and drop shadow to the buttons to make them appear more like buttons according to common mental models</li>
+                <li>Separate appointment slots to make it more clear which buttons correspond to which appointments</li>
+            </ul>
+            <hr class="list-divider">
+            <div class="photo">
+                <img src="images/interfaceA.png" alt="original interface A"/>
+                <h2>Original Interface</h2>   
+            </div>
+            
+            <hr class="list-divider">
+            <div class="photo">
+                <img src="images/interfaceB.png" alt="redesigned interface B"/>
+                <h2>Redesigned Interface</h2>
+            </div>
+        </div>
+        <hr class="section-divider" class="section">
+        <!-- Hypothesize -->
+        <div id="data-analysis" class="section">
+            <h1 class="section-header">Hypothesize, Test, Analyze</h1>
+            <p>To test the difference in the interfaces, I chose the following metrics: </p>
+            <ul class="bullet-list">
+                <li>Did the user misclick?</li>
+                <li>How long did it take the user to complete the task (in seconds)?</li>
+                <li>How far did the user move their mouse during the task (in pixels)?</li>
+            </ul>
+            <p>For each metric, I create a null and alternative hypothesis with reasoning. I then run a statistical test, describe relevant data and make a conclusion on my hypotheses based on the data</p>
+            <p>For both interfaces, the experiment was run 34 times for interface A and 31 times for interface B.</p>
+            <hr class="list-divider">
+            <h1>Misclick</h1>
+            <h3>Null hypothesis</h3>
+            <p class="body-text">Lorem ipsum</p>
+            <h3>Alternative hypothesis</h3>
+            <p class="body-text">Lorem ipsum</p>
+            <h3>Test</h3>
+            <p class="body-text">Lorem ipsum</p>
+            <h3>Results</h3>
+            <table>
+
+            </table>
+            <h3>Conclusion</h3>
+            <p class="body-text">Lorem ipsum</p>
+            
+            <hr class="list-divider">
+            <h1>Time Spent on Page</h1>
+            <hr class="list-divider">
+            <h1>Mouse distance moved</h1>
+            
+        </div>
+        <hr class="section-divider" class="section">
+        <!-- Conclude -->
+        <div id="conclude" class="section">
+            <h1 class="section-header">Conclude</h1>
+            <p> 
+                Overall, I found that in the three metrics, the data provides reasonable evidence to conclude that my updates to interface improved the ease 
+                with which a user could complete the task. 
+            </p>
+            <p>
+                However, it is also important to note that, although my data may paint a clear picture, I would likely have 
+                to conduct the experiment with many more participants to make a more definitive conclusion. Specifically, I had 34 and 31 data points for interface 
+                A and B respectively. The participants were also not necessarily representative of a general user body as everyone was from one computer science class 
+                which would indicate a relative comfort level parsing digital interfaces. This low sample size leads to a high magnitude of variance within a sample’s average. 
+                Consider time on page as an example where I found an an average of roughly 13 seconds spent on the task for interface A, but it has a standard deviation of roughly 11 
+                seconds, indicating a relatively noisy sample.  However, for interface B, the average time is roughly 7 seconds with a 2 second variance. Likewise, the mouse traveled distance shows 
+                a large standard deviation for interface A and a comparatively low standard deviation for interface B (~2500 vs. ~500 pixels respectively). 
+            </p>
+            <p>Thus, I can see that, even though the data is relatively noisy, the consistency that is found over the tests of interface B as compared to interface A suggests a more ubiquitous interface that is able to be successfully used more frequently on average.</p>
+        </div>
+    </body>
+</html>
